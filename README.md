@@ -95,16 +95,14 @@
 # <font color=#484891>样例运行结果</font>
 &emsp;&emsp;终端运行截图如下：
 <img width="900" alt="运行结果" src="https://github.com/yulinnn/3121004802/assets/88888883/3bc7266a-4e38-4656-b209-542b503275ae">
-
-&emsp;&emsp;可以看到，jieba库分词耗时0.367s，程序运行总耗时0.5s，说明处理速度较快。
-
-&emsp;&emsp;答案文件output.txt写入的部分截图如下：
+<br />&emsp;&emsp;可以看到，jieba库分词耗时0.367s，程序运行总耗时0.5s，说明处理速度较快。
+<br />&emsp;&emsp;答案文件output.txt写入的部分截图如下：
 <img width="900" alt="写入截图" src="https://github.com/yulinnn/3121004802/assets/88888883/eda377e1-e7da-4a77-95c3-1ed475298968">
 
 # <font color=#484891>性能分析</font>
 &emsp;&emsp;使用Python自带的性能分析模块cProfile进行性能分析。在终端中输入对应命令，并以cumtime（指定的函数及其所有子函数从调用到退出消耗的累积时间）降序排序，部分截图如下：
 <img width="900" alt="cProfile性能分析（cumtime）" src="https://github.com/yulinnn/3121004802/assets/88888883/94e6ac01-2aa3-423d-91bd-7568464ec74c">
-&emsp;&emsp;可以看到，脚本执行耗时0.83s，并且可以看到大部分的耗时都被中文分词库jieba的执行时间占据，其中函数_call_aside耗时最多，可以说明程序本身的编码较为合理，大部分耗时都由第三方库的运行占据，程序的运行效率较高。
+<br />&emsp;&emsp;可以看到，脚本执行耗时0.83s，并且可以看到大部分的耗时都被中文分词库jieba的执行时间占据，其中函数_call_aside耗时最多，可以说明程序本身的编码较为合理，大部分耗时都由第三方库的运行占据，程序的运行效率较高。
 
 # <font color=#484891>单元测试和覆盖率分析</font>
 ## <font color=#6495ED>单元测试运行结果</font>
@@ -116,11 +114,11 @@
 &emsp;&emsp;单元测试程序unittest.py的运行结果部分截图如下：
 <img width="900" alt="单元测试" src="https://github.com/yulinnn/3121004802/assets/88888883/b3366235-7620-4fa2-9604-c66eb163e408">
 <img width="900" alt="单元测试_" src="https://github.com/yulinnn/3121004802/assets/88888883/dc2aa732-5ea2-4c65-a142-b9a6eed691ca">
-&emsp;&emsp;可以看到，这些测试用例都被较好地进行了分词，并且相似度的计算结果基本符合实际情况。
+<br />&emsp;&emsp;可以看到，这些测试用例都被较好地进行了分词，并且相似度的计算结果基本符合实际情况。
 ## <font color=#6495ED>覆盖率分析</font>
 &emsp;&emsp;使用Coverage库进行代码覆盖率分析，结果如下：
 <img width="900" alt="覆盖率" src="https://github.com/yulinnn/3121004802/assets/88888883/90c2ca4d-b725-410e-a706-fb8d691cbab6">
-&emsp;&emsp;可以看到，单元测试代码unittest.py完全覆盖。而在main.py中，由于本单元测试只针对函数ReadTextAndSplit(textPath)和函数GetSimularityRatio(text1, text2)，故只有这些部分的代码得以覆盖；其中未覆盖到的18-19行用于检查文件路径是否有效，由于在单元测试中所有文件都正常地被读取，故这部分的代码未被覆盖；而40-41行、46-60行则为与单元测试无关的代码。
+<br />&emsp;&emsp;可以看到，单元测试代码unittest.py完全覆盖。而在main.py中，由于本单元测试只针对函数ReadTextAndSplit(textPath)和函数GetSimularityRatio(text1, text2)，故只有这些部分的代码得以覆盖；其中未覆盖到的18-19行用于检查文件路径是否有效，由于在单元测试中所有文件都正常地被读取，故这部分的代码未被覆盖；而40-41行、46-60行则为与单元测试无关的代码。
 
 # <font color=#484891>异常处理</font>
 &emsp;&emsp;项目开发过程中暂未遇到异常。
