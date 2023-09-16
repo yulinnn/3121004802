@@ -76,8 +76,8 @@
 
 ## <font color=#6495ED>依赖库</font>
 <font size=3>python == 3.9.13</font>
-<font size=3>jieba == 0.42.1</font>
-<font size=3>thefuzz == 0.20.0</font>
+<br /><font size=3>jieba == 0.42.1</font>
+<br /><font size=3>thefuzz == 0.20.0</font>
 
 # <font color=#484891>模块接口的设计与实现</font>
 ## <font color=#6495ED>接口设计</font>
@@ -88,9 +88,9 @@
 | WriteToFile(resultPath, output) | 参数为要写入的文件路径resultPath和要写入的内容output，将output写入指定文件中，没有返回值 |
 ## <font color=#6495ED>具体实现</font>
 &emsp;&emsp;程序按照传递命令行参数的方式提供文件的位置，具体为：python main.py [原文文件] [抄袭版论文的文件] [答案文件]。具体实现中采用sys库中的sys.argv[]传递命令行参数。
-&emsp;&emsp;函数ReadTextAndSplit(textPath)中，采用中文分词库jieba实现文本的分词，并且设置停用词，如标点符号、空格、换行符等，从而提高分词结果的准确度与信息密度，使之后的文本相似度计算更为精确有效。
-&emsp;&emsp;函数GetSimularityRatio(text1, text2)中，采用difflib库和thefuzz库计算两个文本的相似度，这两个库都是基于文本匹配的方法进行相似度计算。其中difflib库通过比较两个字符串之间相同字符的个数得出相似度；thefuzz库则采用Edit Distance算法，即通过比较两个字符串之间由一个转成另一个所需的最少编辑操作次数得出相似度，编辑操作一般指插入一个字符、删除一个字符或将一个字符替换成另一个字符，一般来说，编辑距离越小，两个串的相似度越高。
-&emsp;&emsp;程序最终通过函数WriteToFile(resultPath, output)将两种相似度写入用户指定的答案文件中，同时还会写入原文和抄袭版论文的分词结果。
+<br />&emsp;&emsp;函数ReadTextAndSplit(textPath)中，采用中文分词库jieba实现文本的分词，并且设置停用词，如标点符号、空格、换行符等，从而提高分词结果的准确度与信息密度，使之后的文本相似度计算更为精确有效。
+<br />&emsp;&emsp;函数GetSimularityRatio(text1, text2)中，采用difflib库和thefuzz库计算两个文本的相似度，这两个库都是基于文本匹配的方法进行相似度计算。其中difflib库通过比较两个字符串之间相同字符的个数得出相似度；thefuzz库则采用Edit Distance算法，即通过比较两个字符串之间由一个转成另一个所需的最少编辑操作次数得出相似度，编辑操作一般指插入一个字符、删除一个字符或将一个字符替换成另一个字符，一般来说，编辑距离越小，两个串的相似度越高。
+<br />&emsp;&emsp;程序最终通过函数WriteToFile(resultPath, output)将两种相似度写入用户指定的答案文件中，同时还会写入原文和抄袭版论文的分词结果。
 
 # <font color=#484891>样例运行结果</font>
 &emsp;&emsp;终端运行截图如下：
@@ -111,7 +111,7 @@
 - 2、原文和待查重文本分别取自完全不同的字段
 
 &emsp;&emsp;本单元测试针对函数ReadTextAndSplit(textPath)和函数GetSimularityRatio(text1, text2)进行测试，主要检测：文件是否可以正常读取、中文分词是否准确、相似度计算是否符合测试用例实际情况。
-&emsp;&emsp;单元测试程序unittest.py的运行结果部分截图如下：
+<br />&emsp;&emsp;单元测试程序unittest.py的运行结果部分截图如下：
 <img width="900" alt="单元测试" src="https://github.com/yulinnn/3121004802/assets/88888883/b3366235-7620-4fa2-9604-c66eb163e408">
 <img width="900" alt="单元测试_" src="https://github.com/yulinnn/3121004802/assets/88888883/dc2aa732-5ea2-4c65-a142-b9a6eed691ca">
 <br />&emsp;&emsp;可以看到，这些测试用例都被较好地进行了分词，并且相似度的计算结果基本符合实际情况。
