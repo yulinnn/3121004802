@@ -3,7 +3,7 @@
 | ----------------- | --------------- |
 | 这个作业要求在哪里 | <center>[个人项目](https://edu.cnblogs.com/campus/gdgy/CSGrade21-12/homework/13014)</center> |
 | 这个作业的目标 | 个人项目，实现论文查重功能 |
-
+<font size=3>文件SE_PersonalProject包含：主程序main.py，单元测试unittest.py，依赖requirements.txt，答案文件output.txt，样例examples，单元测试用例unittest_samples。</font>
 
 # <font color=#484891>项目需求</font>
 题目：论文查重
